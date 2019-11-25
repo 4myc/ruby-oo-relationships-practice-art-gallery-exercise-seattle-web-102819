@@ -37,9 +37,10 @@ class Artist
   def self.most_prolific
     @@all.min_by {|pt| pt.years_exp / pt.paintings.count} 
     # returns Van Gogh, 13 yrs per painting
+    # min_by returns array in ascending order, artist with fewest years between each painting
 
-    # @@all.max_by {|pt| pt.paintings.count / pt.years_exp}
-    # returns [30, 13, 40]; Kahlo, 40 yrs per painting
+    # @@all.map {|pt| pt.years_exp / pt.paintings.count}
+    # returns [30, 13, 40] (number of years per painting -- picasso, van gogh, kahlo)
   end
 
   def create_painting(title, price, gallery)
