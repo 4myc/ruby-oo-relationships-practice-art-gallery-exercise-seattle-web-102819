@@ -25,7 +25,7 @@ class Artist
 
   # Return an `array` of all cities that an artist has paintings in
   def cities
-    paintings.map {|pt| pt.gallery.city}
+    galleries.map {|g| g.city}
   end
 
   # Return the total years of exp of all artists
@@ -37,7 +37,7 @@ class Artist
   def self.most_prolific
     @@all.min_by {|pt| pt.years_exp / pt.paintings.count} 
     # returns Van Gogh, 13 yrs per painting
-    # min_by returns array in ascending order, artist with fewest years between each painting
+    # min_by returns an array in ascending order, artist with fewest years between each painting
 
     # @@all.map {|pt| pt.years_exp / pt.paintings.count}
     # returns [30, 13, 40] (number of years per painting -- picasso, van gogh, kahlo)
