@@ -40,7 +40,7 @@ class Artist
     # min_by returns an array in ascending order, artist with fewest years between each painting
 
     # @@all.map {|pt| pt.years_exp / pt.paintings.count}
-    # returns [35, 6, 25] (number of years per painting -- picasso, van gogh, kahlo)
+    # returns [35, 6, 25] (array of number of years per painting --> [picasso, van gogh, kahlo])
   end
 
   def create_painting(title, price, gallery)

@@ -30,7 +30,7 @@ class Gallery
 
   # Returns an `instance` of the most expensive painting in a gallery
   def most_expensive_painting
-    paintings.max {|pt| pt.price}
+    paintings.max_by {|pt| pt.price}
     # Returns the entire painting object of the most expensive painting
 
     # paintings.map {|pt| pt.price}.max
