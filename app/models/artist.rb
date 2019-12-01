@@ -35,12 +35,7 @@ class Artist
 
   # Returns an `instance` of the artist with the highest amount of paintings per year of experience.
   def self.most_prolific
-    @@all.min_by {|pt| pt.years_exp / pt.paintings.count.to_f}
-    # returns Van Gogh, 6 yrs per painting
-    # min_by returns an array in ascending order, artist with fewest years between each painting
-
-    # @@all.map {|pt| pt.years_exp / pt.paintings.count}
-    # returns [35, 6, 25] (array of number of years per painting --> [picasso, van gogh, kahlo])
+    @@all.max_by {|pt| pt.paintings.count / pt.years_exp.to_f}
   end
 
   def create_painting(title, price, gallery)
